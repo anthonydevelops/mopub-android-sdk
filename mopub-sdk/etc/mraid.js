@@ -559,7 +559,7 @@
 
   mraid.removeEventListener = function(event, listener) {
     if (!event) {
-      broadcastEvent(EVENTS.ERROR, 'Event is required.', 'removeEventListener');
+      console.log(EVENTS.ERROR, 'Event is required.', 'removeEventListener');
       return;
     }
 
