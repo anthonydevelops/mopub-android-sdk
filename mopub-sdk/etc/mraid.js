@@ -560,6 +560,7 @@
   mraid.removeEventListener = function(event, listener) {
     if (!event) {
       console.log(EVENTS.ERROR, 'Event is required.', 'removeEventListener');
+      broadcastEvent(EVENTS.ERROR, 'Event is required.', 'removeEventListener');
       return;
     }
 
@@ -572,6 +573,7 @@
 
       // If we didn't have a valid event or couldn't remove the listener from the event, broadcast an error and return early.
       if (!success) {
+        console.log(EVENTS.ERROR, 'Listener not currently registered for event.', 'removeEventListener');
         broadcastEvent(EVENTS.ERROR, 'Listener not currently registered for event.', 'removeEventListener');
         return;
       }
